@@ -1,3 +1,7 @@
+/*
+ *  This is the sample test case for Demo
+ */
+
 package webShop;
 
 import org.openqa.selenium.WebDriver;
@@ -29,6 +33,7 @@ Assert.assertEquals(Actualtitle, Expectedtitle);
 System.out.println("After Assertion " + Expectedtitle + Actualtitle + " Title matched ");
    
 }
+
 
 @Test
 public void testPageTitle() {
