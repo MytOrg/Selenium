@@ -1,5 +1,5 @@
 /*
- *  This is the sample test case for Demo
+ *  The code is for Demo purpose
  */
 
 package webShop;
