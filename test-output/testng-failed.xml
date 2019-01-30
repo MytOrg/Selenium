@@ -5,8 +5,6 @@
     <classes>
       <class name="webShop.Category">
         <methods>
-          <include name="setupreport"/>
-          <include name="comparettwohandsets"/>
           <include name="setBaseURL"/>
           <include name="endSession"/>
           <include name="Filteringfunction"/>

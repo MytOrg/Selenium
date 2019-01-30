@@ -128,6 +128,7 @@ public class Utils {
 			//Thread.sleep(120);
 			wait.until(ExpectedConditions.stalenessOf(element));
 			element.click();
+			//element.sendKeys("what is selenium");
 			/*html.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT)); // Zooming out
 */			//driver.findElement(By.xpath(""+Xid+"")).click();
 
@@ -185,8 +186,12 @@ public class Utils {
 	{
 		TakesScreenshot ts=(TakesScreenshot) driver;
 		File src=ts.getScreenshotAs(OutputType.FILE);
-		String path=System.getProperty("user.dir","D:\\Telia\\Testing\\Selenium\\")+"/Screenshot/"+System.currentTimeMillis()+".png";
+		System.out.println("the value of src is: " + src);
+		//String path=System.getProperty("user.dir","D:\\Telia\\Testing\\Selenium\\")+"/Screenshot/"+System.currentTimeMillis()+".png";
+		String path= "D:\\Telia\\Testing\\Selenium\\Screenshot\\"+System.currentTimeMillis()+".png";
 		File destination=new File(path);
+		System.out.println("the path is: " + path);
+		System.out.println("the destination is: " + destination);
 		
 		try 
 		{

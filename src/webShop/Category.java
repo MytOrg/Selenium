@@ -1,4 +1,6 @@
-
+/* 
+ * The Author of the code is me
+ */
 package webShop;
 
 import org.openqa.selenium.By;
@@ -29,22 +31,28 @@ public class Category {
 		
 		
 		System.setProperty("webdriver.gecko.driver", Utility.constant.FirefoxP);
-		Utility.constant.driver =  new FirefoxDriver();
-
-	}
-	
-	@BeforeMethod
-	
-	public void setupreport() {
-		
-		
-			
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("D:\\Telia\\Testing\\Selenium\\screenshots/Report.html");
+		Utility.constant.driver =  new FirefoxDriver();	
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("D:\\Telia\\Testing\\Selenium\\Screenshot\\Report.html");
 		Utility.constant.extent = new ExtentReports();
 		Utility.constant.extent.attachReporter(reporter);
 		Utility.constant.logger = Utility.constant.extent.createTest("LoginTest");
 		
+
 	}
+	
+//	@BeforeMethod
+//	
+//	public void setupreport() {
+//		
+//		
+//		Utility.constant.driver =  new FirefoxDriver();	
+//		ExtentHtmlReporter reporter = new ExtentHtmlReporter("D:\\Telia\\Testing\\Selenium\\Screenshot\\Report.html");
+//		Utility.constant.extent = new ExtentReports();
+//		Utility.constant.extent.attachReporter(reporter);
+//		Utility.constant.logger = Utility.constant.extent.createTest("LoginTest");
+//		
+//		
+//	}
 
 	@Test(priority = 0)
 	public void opewebshop() throws Exception {
@@ -64,8 +72,15 @@ public class Category {
 	@Test(priority = 1)
 	public void Filteringfunction() throws InterruptedException {
 		
+		// For testing
+		Utility.constant.driver.findElement(By.xpath("//input[@title='Search']")).click();
+		Thread.sleep(10);
+		Utility.constant.driver.findElement(By.xpath("//div[@class='FPdoLc VlcLAe']//input[@value='Google Search']")).click();
+		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 14, 2), "CLICK");
+		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 15, 2), "CLICK");
 		
-
+		
+/*
 		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 1, 2), "CLICK");
 		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 2, 2), "CLICK");
 		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 3, 2), "CLICK");
@@ -79,8 +94,10 @@ public class Category {
 		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 6, 2), "CLICK");
 		Utility.Utils.printM("Element count is After Filtering Samsung Mobiler"
 				+ Utility.Utils.elementCnt(Utility.constant.driver, "//*[contains(text(),'Samsung')]"));
+*/				
 	}
 
+	/*
 	@Test(priority = 2)
 	public void comparettwohandsets() throws InterruptedException {
 		
@@ -94,6 +111,7 @@ public class Category {
 		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 13, 2), "CLICK");
 
 	}
+	*/
 
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException {
@@ -105,7 +123,12 @@ public class Category {
 		}
 
 		Utility.constant.extent.flush();
-		//Utility.constant.driver.close();
+		
+		if (Utility.constant.driver!= null) {
+			Utility.constant.driver.quit();
+			}
+		
+		Utility.constant.driver.get("D:\\Telia\\Testing\\Selenium\\Screenshot\\Report.html");
 		//Utility.constant.driver.quit();
 
 	}
