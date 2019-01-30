@@ -7,7 +7,8 @@ import com.aventstack.extentreports.ExtentTest;
 
 public class constant {
 	
-	 public static final String baseurl = "https://web.pre.callme.dk";
+	public static final String baseurl = "https://www.google.com";
+	 //public static final String baseurl = "https://web.pre.callme.dk";
 	//public static final String baseurl = "https://web-test.callme.dk/"; // https://web.pre.callme.dk/
 	public static final String Path_TestData = "D:\\Telia\\Testing\\Selenium\\src\\TestData\\";
     public static final String File_TestData = "Data.xlsx";
