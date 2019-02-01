@@ -1,5 +1,5 @@
 /* 
- * Hey selenium
+ * Hey import
  */
 package webShop;
 
