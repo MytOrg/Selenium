@@ -33,20 +33,23 @@ public class Category {
 	ExtentTest parentTest;
 	ExtentTest childTest;
 	ExtentColor colour;
+	String path;
 
 
 	@BeforeTest
 
 	public void setBaseURL() throws Exception {
 
+		path = System.getProperty("user.dir") + "/test-output/MyOwnReport.html";
 		System.setProperty("webdriver.gecko.driver", Utility.constant.FirefoxP);
 
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/MyOwnReport.html");
 		
-		//htmlReporter.setAppendExisting(true);
+		htmlReporter = new ExtentHtmlReporter(path);
+		htmlReporter.setAppendExisting(false);
+		
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
-
+	
 		extent.setSystemInfo("Environment", "QA");
 		extent.setSystemInfo("User Name", "Automation Team");
 
@@ -56,20 +59,23 @@ public class Category {
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
 		htmlReporter.config().setTheme(Theme.DARK);
 		
+		
+		Utility.constant.driver = new FirefoxDriver();
+		
 
 	}
 	
 	@BeforeMethod
 	public void setupreport() {
 
-		Utility.constant.driver = new FirefoxDriver();
+		System.out.println("Before Method");
 
 	}
 
 	@Test(priority = 0)
 	public void opewebshop() throws Exception {
 
-	    parentTest = extent.createTest("opewebshop","This is Demo for webShop opening URL");
+	    parentTest= extent.createTest("opewebshop","This is Demo for webShop opening URL");
 	   	childTest = parentTest.createNode("webShop opening URL");
 		
 		parentTest.assignCategory("Regression");
@@ -147,41 +153,40 @@ public class Category {
 	*/
 
 
-	 @AfterMethod
-     public void getResult(ITestResult result) throws IOException {
-		 
-		 String screenshotPath = Utility.Utils.getScreenshot(Utility.constant.driver, result.getName());
-		 
-     if(result.getStatus() == ITestResult.FAILURE) {
-    	 childTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED)).addScreenCaptureFromPath(screenshotPath);
-    	 childTest.fail(result.getThrowable());
-     }
-     else if(result.getStatus() == ITestResult.SKIP) {
-    	 childTest.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE)).addScreenCaptureFromPath(screenshotPath);
-    	 childTest.skip(result.getThrowable());
-     }
-     else {
-    	 childTest.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN)).addScreenCaptureFromPath(screenshotPath);
-    	 
-     }
-     
-     //extent.removeTest(childTest);
-     
-     extent.flush(); 
-     extent.removeTest(childTest);    
-     extent.removeTest(parentTest);    
-	
-	// Utility.constant.driver.quit();
-    
+	@AfterMethod
+	public void getResult(ITestResult result) throws IOException {
 
- }
+		try {
+			String screenshotPath = Utility.Utils.getScreenshot(Utility.constant.driver, result.getName());
+
+			if (result.getStatus() == ITestResult.FAILURE) {
+				childTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED))
+						.addScreenCaptureFromPath(screenshotPath);
+				childTest.fail(result.getThrowable());
+			} else if (result.getStatus() == ITestResult.SKIP) {
+				childTest.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));						
+				childTest.skip(result.getThrowable());
+			} else {
+				childTest.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));						
+
+			}
+			
+			extent.flush();
+			
+			//extent.removeTest(childTest);
+			//extent.removeTest(parentTest);
+		}
+
+		catch (IOException e) {
+			System.out.println("Failed due to : " + e.getMessage());
+		}
+	}
 	
 	 
 	@AfterTest
-	public void tearDown() {     
-		 
-		 //extent.flush(); 
-		 Utility.constant.driver.close();
+	public void tearDown() {
+		extent.removeTest(test);
+		Utility.constant.driver.close();
 	}
 
 }
