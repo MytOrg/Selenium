@@ -1,6 +1,3 @@
-/* 
- * Hey import
- */
 package webShop;
 
 import org.openqa.selenium.By;
@@ -17,67 +14,103 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import Utility.constant;
 
 public class Category {
+	
+    ExtentHtmlReporter htmlReporter;
+    ExtentReports extent;
+    ExtentTest test;
+	ExtentTest parentTest;
+	ExtentTest childTest;
+	ExtentColor colour;
 
 
 	@BeforeTest
 
 	public void setBaseURL() throws Exception {
-		
-		
+
 		System.setProperty("webdriver.gecko.driver", Utility.constant.FirefoxP);
-		Utility.constant.driver =  new FirefoxDriver();	
-		ExtentHtmlReporter reporter = new ExtentHtmlReporter("D:\\Telia\\Testing\\Selenium\\Screenshot\\Report.html");
-		Utility.constant.extent = new ExtentReports();
-		Utility.constant.extent.attachReporter(reporter);
-		Utility.constant.logger = Utility.constant.extent.createTest("LoginTest");
+
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/MyOwnReport.html");
+		
+		//htmlReporter.setAppendExisting(true);
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+
+		extent.setSystemInfo("Environment", "QA");
+		extent.setSystemInfo("User Name", "Automation Team");
+
+		htmlReporter.config().setChartVisibilityOnOpen(true);
+		htmlReporter.config().setDocumentTitle("AutomationTesting.in Demo Report");
+		htmlReporter.config().setReportName("My Own Report");
+		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
+		htmlReporter.config().setTheme(Theme.DARK);
 		
 
 	}
 	
-//	@BeforeMethod
-//	
-//	public void setupreport() {
-//		
-//		
-//		Utility.constant.driver =  new FirefoxDriver();	
-//		ExtentHtmlReporter reporter = new ExtentHtmlReporter("D:\\Telia\\Testing\\Selenium\\Screenshot\\Report.html");
-//		Utility.constant.extent = new ExtentReports();
-//		Utility.constant.extent.attachReporter(reporter);
-//		Utility.constant.logger = Utility.constant.extent.createTest("LoginTest");
-//		
-//		
-//	}
+	@BeforeMethod
+	public void setupreport() {
+
+		Utility.constant.driver = new FirefoxDriver();
+
+	}
 
 	@Test(priority = 0)
 	public void opewebshop() throws Exception {
+
+	    parentTest = extent.createTest("opewebshop","This is Demo for webShop opening URL");
+	   	childTest = parentTest.createNode("webShop opening URL");
 		
+		parentTest.assignCategory("Regression");
+		parentTest.assignAuthor("Abhay");   
 		
+		childTest.info("Opening the WebShop");
 		
-		Utility.constant.driver.get(Utility.constant.baseurl);
+		//childTest.log(Status.INFO, "Opening the WebShop URL");
+		 childTest.log(Status.INFO,MarkupHelper.createLabel("Opening the WebShop URL", ExtentColor.BLUE));
+
+        Utility.constant.driver.get(Utility.constant.baseurl);
 		Utility.Utils.waitForLoad(Utility.constant.driver); // Wait for page
 															// load for max of 5
 															// minutes
-		//Thread.sleep(180);
+		// Thread.sleep(180);
 		String actualTitle = Utility.constant.driver.getTitle();
+
+		childTest.log(Status.INFO,MarkupHelper.createLabel("Comparing the Title", ExtentColor.BLUE));
+
 		Assert.assertEquals(actualTitle, constant.expectedTitle);
 		System.out.println("actualTitle is :" + actualTitle + " and expectedTitle is: " + constant.expectedTitle);
 	}
 
+	
 	@Test(priority = 1)
 	public void Filteringfunction() throws InterruptedException {
+		  
+		    parentTest = extent.createTest("Filteringfunction","This is Demo for testing the Filteringfunction");
+		   	childTest = parentTest.createNode("Testing the Filteringfunction");
+			
+			parentTest.assignCategory("Regression");
+			parentTest.assignAuthor("Abhay");   
+			
+			childTest.info("Clicking on the google TExt Box");
 		
 		// For testing
 		Utility.constant.driver.findElement(By.xpath("//input[@title='Search']")).click();
 		Thread.sleep(10);
-		Utility.constant.driver.findElement(By.xpath("//div[@class='FPdoLc VlcLAe']//input[@value='Google Search']")).click();
+		Utility.constant.driver.findElement(By.xpath("//div[@class='FPdoLc VlcLAe']//input[@value='Google Search']")).click();  
 		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 14, 2), "CLICK");
-		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 15, 2), "CLICK");
+		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 15, 2), "CLICK");  
 		
 		
 /*
@@ -113,56 +146,44 @@ public class Category {
 	}
 	*/
 
-	@AfterMethod
-	public void tearDown(ITestResult result) throws IOException {
 
-		if (result.getStatus() == ITestResult.FAILURE) {
-			String temp = Utility.Utils.getScreenshot(Utility.constant.driver);
-			Utility.constant.logger.fail(result.getThrowable().getMessage(),
-					MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
-		}
+	 @AfterMethod
+     public void getResult(ITestResult result) throws IOException {
+		 
+		 String screenshotPath = Utility.Utils.getScreenshot(Utility.constant.driver, result.getName());
+		 
+     if(result.getStatus() == ITestResult.FAILURE) {
+    	 childTest.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED)).addScreenCaptureFromPath(screenshotPath);
+    	 childTest.fail(result.getThrowable());
+     }
+     else if(result.getStatus() == ITestResult.SKIP) {
+    	 childTest.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE)).addScreenCaptureFromPath(screenshotPath);
+    	 childTest.skip(result.getThrowable());
+     }
+     else {
+    	 childTest.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN)).addScreenCaptureFromPath(screenshotPath);
+    	 
+     }
+     
+     //extent.removeTest(childTest);
+     
+     extent.flush(); 
+     extent.removeTest(childTest);    
+     extent.removeTest(parentTest);    
+	
+	// Utility.constant.driver.quit();
+    
 
-		Utility.constant.extent.flush();
-		
-		if (Utility.constant.driver!= null) {
-			Utility.constant.driver.quit();
-			}
-		
-		Utility.constant.driver.get("D:\\Telia\\Testing\\Selenium\\Screenshot\\Report.html");
-		//Utility.constant.driver.quit();
-
-	}
-
+ }
+	
+	 
 	@AfterTest
-
-	public void endSession() {
-		Utility.constant.driver.close();
+	public void tearDown() {     
+		 
+		 //extent.flush(); 
+		 Utility.constant.driver.close();
 	}
 
 }
 
-/*
- * 
- * 
- * public static void takeScreenshot() throws Exception { String timeStamp; File
- * screenShotName;
- * 
- * 
- * FirefoxDriver driver = new FirefoxDriver(); //WebDriver augmentedDriver = new
- * Augmenter().augment(driver); //File scrFile =
- * ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
- * 
- * File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
- * //The below method will save the screen shot in d drive with name
- * "screenshot.png" timeStamp = new
- * SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
- * screenShotName = new
- * File("D:\\Telia\\Testing\\Selenium\\screenshots\\"+timeStamp+".png");
- * FileUtils.copyFile(scrFile, screenShotName);
- * 
- * String filePath = screenShotName.toString(); String path =
- * "<img src=\"file://" + filePath + "\" alt=\"\"/>"; Reporter.log(path);
- * 
- * } }
- * 
- */
+

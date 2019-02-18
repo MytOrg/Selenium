@@ -182,7 +182,7 @@ public class Utils {
 	}
 	
 	
-	public static String getScreenshot(WebDriver driver)
+	public static String getScreenshot(WebDriver driver, String screenshot)
 	{
 		TakesScreenshot ts=(TakesScreenshot) driver;
 		File src=ts.getScreenshotAs(OutputType.FILE);
@@ -203,5 +203,4 @@ public class Utils {
 		
 		return path;
 	}
-
 }
