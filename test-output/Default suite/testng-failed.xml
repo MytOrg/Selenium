@@ -5,8 +5,9 @@
     <classes>
       <class name="webShop.Category">
         <methods>
+          <include name="setupreport"/>
           <include name="setBaseURL"/>
-          <include name="endSession"/>
+          <include name="getResult"/>
           <include name="Filteringfunction"/>
           <include name="opewebshop"/>
           <include name="tearDown"/>

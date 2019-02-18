@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\as00360417\AppData\Local\Temp\testng-eclipse-508702612\testng-customsuite.xml</span>
+                    <span>C:\Users\as00360417\AppData\Local\Temp\testng-eclipse-110361488\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,  1 skipped,  </span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,24 +102,15 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="webShop.Category" hash-for-method="Filteringfunction">Filteringfunction</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="webShop.Category" hash-for-method="opewebshop">opewebshop</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
-                    </span>
-                    <div class="method-list-content skipped suite-Default_suite">
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="webShop.Category" hash-for-method="Filteringfunction">Filteringfunction</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -139,6 +130,63 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="Filteringfunction">
+                  </a> <!-- Filteringfunction -->
+                  <span class="method-name">Filteringfunction</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //input[@title=&apos;Search&apos;]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:05:20.749Z&apos;
+System info: host: &apos;INPUHJLP07059&apos;, ip: &apos;10.20.231.81&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_131&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 64.0.2, capabilities: {desiredCapabilities: {acceptInsecureCerts: true, browserName: firefox}}, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 9080, moz:profile: C:\Users\as00360417\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 12866170-a38d-42e8-b311-e4e59ec52961
+*** Element info: {Using=xpath, value=//input[@title=&apos;Search&apos;]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at webShop.Category.Filteringfunction(Category.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="opewebshop">
                   </a> <!-- opewebshop -->
                   <span class="method-name">opewebshop</span>
@@ -149,7 +197,7 @@
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:453)
 	at org.testng.Assert.assertEquals(Assert.java:463)
-	at webShop.Category.opewebshop(Category.java:66)
+	at webShop.Category.opewebshop(Category.java:92)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -181,100 +229,10 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-failed -->
-          <div class="suite-Default_suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">webShop.Category</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Filteringfunction">
-                  </a> <!-- Filteringfunction -->
-                  <span class="method-name">Filteringfunction</span>
-                  <div class="stack-trace">java.lang.NoClassDefFoundError: org/bson/types/ObjectId
-	at java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.lang.Class.privateGetDeclaredMethods(Unknown Source)
-	at java.lang.Class.privateGetPublicMethods(Unknown Source)
-	at java.lang.Class.getMethods(Unknown Source)
-	at freemarker.ext.beans.ClassIntrospector.discoverAccessibleMethods(ClassIntrospector.java:464)
-	at freemarker.ext.beans.ClassIntrospector.discoverAccessibleMethods(ClassIntrospector.java:457)
-	at freemarker.ext.beans.ClassIntrospector.createClassIntrospectionData(ClassIntrospector.java:268)
-	at freemarker.ext.beans.ClassIntrospector.get(ClassIntrospector.java:244)
-	at freemarker.ext.beans.BeanModel.&lt;init&gt;(BeanModel.java:114)
-	at freemarker.ext.beans.BeanModel.&lt;init&gt;(BeanModel.java:104)
-	at freemarker.ext.beans.StringModel.&lt;init&gt;(StringModel.java:52)
-	at freemarker.ext.beans.StringModel$1.create(StringModel.java:37)
-	at freemarker.ext.beans.BeansModelCache.create(BeansModelCache.java:71)
-	at freemarker.ext.util.ModelCache.getInstance(ModelCache.java:84)
-	at freemarker.ext.beans.BeansWrapper.wrap(BeansWrapper.java:860)
-	at freemarker.template.DefaultObjectWrapper.handleUnknownType(DefaultObjectWrapper.java:235)
-	at freemarker.template.DefaultObjectWrapper.wrap(DefaultObjectWrapper.java:214)
-	at freemarker.template.WrappingTemplateModel.wrap(WrappingTemplateModel.java:105)
-	at freemarker.template.DefaultListAdapter.get(DefaultListAdapter.java:75)
-	at freemarker.core.DynamicKeyName.dealWithNumericalKey(DynamicKeyName.java:104)
-	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:69)
-	at freemarker.core.Expression.eval(Expression.java:78)
-	at freemarker.core.Assignment.accept(Assignment.java:131)
-	at freemarker.core.Environment.visit(Environment.java:324)
-	at freemarker.core.MixedContent.accept(MixedContent.java:54)
-	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
-	at freemarker.core.ConditionalBlock.accept(ConditionalBlock.java:48)
-	at freemarker.core.Environment.visit(Environment.java:324)
-	at freemarker.core.MixedContent.accept(MixedContent.java:54)
-	at freemarker.core.Environment.visit(Environment.java:324)
-	at freemarker.core.Environment.process(Environment.java:302)
-	at freemarker.template.Template.process(Template.java:325)
-	at com.aventstack.extentreports.reporter.ExtentHtmlReporter.flush(ExtentHtmlReporter.java:142)
-	at java.util.ArrayList.forEach(Unknown Source)
-	at com.aventstack.extentreports.Report.notifyReporters(Report.java:247)
-	at com.aventstack.extentreports.Report.flush(Report.java:169)
-	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:272)
-	at webShop.Category.tearDown(Category.java:123)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.ClassNotFoundException: org.bson.types.ObjectId
-	at java.net.URLClassLoader.findClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-	at java.lang.ClassLoader.loadClass(Unknown Source)
-	... 66 more
-
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-skipped -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\as00360417\AppData\Local\Temp\testng-eclipse-508702612\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\as00360417\AppData\Local\Temp\testng-eclipse-110361488\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -327,16 +285,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'opewebshop')
 data.setCell(0, 2, 'webShop.Category')
-data.setCell(0, 3, 8581);
+data.setCell(0, 3, 5403);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Filteringfunction')
 data.setCell(1, 2, 'webShop.Category')
-data.setCell(1, 3, 0);
+data.setCell(1, 3, 328);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -367,22 +325,38 @@ return data;
                 <span class="method-name">setBaseURL</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">setupreport</span>
+                <span class="method-start">297 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">opewebshop</span>
-                <span class="method-start">35810 ms</span>
+                <span class="method-start">11177 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=opewebshop status=FAILURE method=Category.opewebshop()[pri:0, instance:webShop.Cate...)</span>
+                <span class="method-start">16595 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setupreport</span>
+                <span class="method-start">19285 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">tearDown([TestResult name=opewebshop status=FAILURE method=Category.opewebshop()[pri:0, instance:webShop.Cate...)</span>
-                <span class="method-start">44854 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
                 <span class="method-name">Filteringfunction</span>
-                <span class="method-start">-1548770920524 ms</span>
+                <span class="method-start">30870 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=Filteringfunction status=FAILURE method=Category.Filteringfunction()[pri:1, instanc...)</span>
+                <span class="method-start">31214 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">31442 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -43,7 +43,9 @@
 	<classpathentry kind="lib" path="D:/@Exlore/Softwares/poi-bin/common-compress/commons-compress-1.18/commons-compress-1.18-sources.jar"/>
 	<classpathentry kind="lib" path="D:/@Exlore/Softwares/poi-bin/common-compress/commons-compress-1.18/commons-compress-1.18-tests.jar"/>
 	<classpathentry kind="lib" path="D:/@Exlore/Softwares/poi-bin/common-compress/commons-compress-1.18/commons-compress-1.18-test-sources.jar"/>
-	<classpathentry kind="lib" path="D:/@Exlore/Softwares/ExtentReport/extentreports-3.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/@Exlore/Softwares/ExtentReport/extentreports-3.1.2.jar" sourcepath="D:/@Exlore/Softwares/ExtentReport/extentreports-3.1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/@Exlore/Softwares/ExtentReport/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="D:/Telia/Testing/Selenium/lib/bson-3.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Telia/Testing/Selenium/lib/extentreports-3.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
