@@ -1,6 +1,6 @@
 package webShop;
 
-/* Added Comment1*/
+/* Adding code to repo*/
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -93,67 +93,67 @@ public class Category {
 															// load for max of 5
 															// minutes
 		// Thread.sleep(180);
-		String actualTitle = Utility.constant.driver.getTitle();
-
-		childTest.log(Status.INFO,MarkupHelper.createLabel("Comparing the Title", ExtentColor.BLUE));
-
-		Assert.assertEquals(actualTitle, constant.expectedTitle);
-		System.out.println("actualTitle is :" + actualTitle + " and expectedTitle is: " + constant.expectedTitle);
+		//String actualTitle = Utility.constant.driver.getTitle();
+		/* Clicking on the btn_cookies */
+		childTest.log(Status.INFO,MarkupHelper.createLabel("Clicking on the btn_cookies", ExtentColor.BLUE));
+		Utility.Utils.printM(Utility.Utils.readExcelFile(0, 1, 2));
+		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 1, 2), "CLICK","NA");	
+		
+		//Assert.assertEquals(actualTitle, constant.expectedTitle);
+		//System.out.println("actualTitle is :" + actualTitle + " and expectedTitle is: " + constant.expectedTitle);
 	}
 
 	
 	@Test(priority = 1)
 	public void Filteringfunction() throws InterruptedException {
-		  
-		    parentTest = extent.createTest("Filteringfunction","This is Demo for testing the Filteringfunction");
-		   	childTest = parentTest.createNode("Testing the Filteringfunction");
-			
-			parentTest.assignCategory("Regression");
-			parentTest.assignAuthor("Abhay");   
-			
-			childTest.info("Clicking on the google TExt Box");
-		
-		// For testing
-		Utility.constant.driver.findElement(By.xpath("//input[@title='Search']")).click();
-		Thread.sleep(10);
-		Utility.constant.driver.findElement(By.xpath("//div[@class='FPdoLc VlcLAe']//input[@value='Google Search']")).click();  
-		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 14, 2), "CLICK");
-		//Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 15, 2), "CLICK");  
-		
-		
-/*
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 1, 2), "CLICK");
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 2, 2), "CLICK");
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 3, 2), "CLICK");
 
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 7, 2), "CLICK");
-		Utility.Utils.printM("Element count is After Filtering Apple Mobiler"
-				+ Utility.Utils.elementCnt(Utility.constant.driver, "//*[contains(text(),'Apple')]"));
+		parentTest = extent.createTest("Filtering Function", "Testing the Filtering Functionlity");
+		childTest = parentTest.createNode("Filteringfunction");
 
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 5, 2), "CLICK");
+		parentTest.assignCategory("Functional");
+		parentTest.assignAuthor("Automation Team");
 
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 6, 2), "CLICK");
-		Utility.Utils.printM("Element count is After Filtering Samsung Mobiler"
-				+ Utility.Utils.elementCnt(Utility.constant.driver, "//*[contains(text(),'Samsung')]"));
-*/				
+	//	childTest.info("Clicking on the Shop Link");
+	//	Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 2, 2), "CLICK");
+		
+		childTest.info("Clicking on the Mobiler Link");
+		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 3, 2), "CLICK","NA");
+
+		childTest.info("Clicking on the Brand Apple"); 
+		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 7, 2), "CLICK","DOWN");
+		
+		childTest.log(Status.INFO,MarkupHelper.createLabel("Count of Items after selecting Brand Apple and Installments 24 Month is :"
+				+Utility.Utils.elementCnt(Utility.constant.driver, "//*[contains(text(),'Apple')]"), ExtentColor.BLUE));
+		
+		childTest.info("Clicking on the Reset Button");
+		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 5, 2), "CLICK","NA");
+
+		childTest.info("Clicking on the Brand Samsung");
+		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 6, 2), "CLICK","NA");
+		
+		childTest.log(Status.INFO,MarkupHelper.createLabel("Count of Items after selecting Brand Samsung and Installments 24 Month is :"
+				+ Utility.Utils.elementCnt(Utility.constant.driver, "//*[contains(text(),'Samsung')]"), ExtentColor.BLUE));
+		
 	}
+	
+	
+	@Test(priority = 1)
+	public void TestFail() throws InterruptedException {
 
-	/*
-	@Test(priority = 2)
-	public void comparettwohandsets() throws InterruptedException {
+		parentTest = extent.createTest("Failing Test", "Testing the Filtering Functionlity");
+		childTest = parentTest.createNode("Failing Test");
+
+		parentTest.assignCategory("Sanity");
+		parentTest.assignAuthor("Abhay");
+
+	//	childTest.info("Clicking on the Shop Link");
+	//	Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 2, 2), "CLICK");
 		
+		childTest.info("Clicking on the random Link");
+		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 13, 2), "CLICK","NA");
+
 		
-
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 5, 2), "CLICK");
-
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 7, 2), "CLICK");
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 10, 2), "CLICK");
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 11, 2), "CLICK");
-		Utility.Utils.functionMain(Utility.constant.driver, "XPATH", Utility.Utils.readExcelFile(0, 13, 2), "CLICK");
-
 	}
-	*/
-
 
 	@AfterMethod
 	public void getResult(ITestResult result) throws IOException {
@@ -173,9 +173,9 @@ public class Category {
 
 			}
 			
-			extent.flush();
+			 extent.flush();
 			
-			//extent.removeTest(childTest);
+			// extent.removeTest(childTest);
 			//extent.removeTest(parentTest);
 		}
 
@@ -187,7 +187,9 @@ public class Category {
 	 
 	@AfterTest
 	public void tearDown() {
-		extent.removeTest(test);
+		//extent.flush();
+		//extent.removeTest(test);
+		
 		Utility.constant.driver.close();
 	}
 

@@ -8,7 +8,8 @@
           <include name="setupreport"/>
           <include name="setBaseURL"/>
           <include name="getResult"/>
-          <include name="opewebshop"/>
+          <include name="Filteringfunction"/>
+          <include name="TestFail"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- webShop.Category -->

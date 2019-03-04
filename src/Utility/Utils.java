@@ -23,8 +23,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.sun.corba.se.spi.orbutil.fsm.Action;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -107,31 +107,48 @@ public class Utils {
 	}
 
 	// Function is to perform the action based on the identifier passed
-	public static void functionMain(WebDriver driver, String Xidentificationby, String Xid, String Xevent)
+	public static void functionMain(WebDriver driver, String Xidentificationby, String Xid, String Xevent, String Position)
 			throws InterruptedException {
+		
+		WebElement element = driver.findElement(By.xpath("" + Xid + ""));
+	    WebDriverWait wait = new WebDriverWait(driver, 300);
+	                             //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("" + Xid + "")));
+	                            // wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("" + Xid + "")));
+                                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("" + Xid + "")));
+                                 wait.until(ExpectedConditions.visibilityOf(element));
+                                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("" + Xid + "")));
+                               //  element.isEnabled();
+                               //  element.isDisplayed();
 
+		
 		if (Xidentificationby == "XPATH" && Xevent == "CLICK") {
 
-			WebElement element=driver.findElement(By.xpath(""+Xid+""));
-            //driver.manage().window().maximize();
-            
-			// Zoom in  fucntion
-/*			WebElement html = driver.findElement(By.tagName("html"));
-			html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));*/
-			
-			driver.manage().timeouts().implicitlyWait(180,TimeUnit.SECONDS) ;
-			
+			    
+			    
+			    if (Position == "DOWN"){
+			    	printM("Down Statment");
+			    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			    }
+			    else {
+			    	printM("The element is in the view panel");
+			    };
+			    	
+			    
 			// explicit wait - to wait for the compose button to be click-able
-			WebDriverWait wait = new WebDriverWait(driver, 300); 
-			
-			wait.until(ExpectedConditions.visibilityOf(element));
-			//Thread.sleep(120);
-			wait.until(ExpectedConditions.stalenessOf(element));
-			element.click();
-			//element.sendKeys("what is selenium");
-			/*html.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT)); // Zooming out
-*/			//driver.findElement(By.xpath(""+Xid+"")).click();
+			  
 
+			//driver.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+			    
+
+
+				Actions builder = new Actions(driver);
+				//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);			
+				Action mouseOverHome = builder.moveToElement(element).click().build();
+				mouseOverHome.perform();
+				Thread.sleep(2000);
+				waitForLoad(driver);
+			
+ 
 		}
 
 		else if (Xidentificationby == "XPATH" && Xevent == "SEARCH_DROP_DOWN") {
@@ -156,7 +173,8 @@ public class Utils {
 			}
 			;
 		}
-	}
+			 
+			 }
 	
 	// Function to get the element count based on the xpath passed
 	public static int elementCnt(WebDriver driver, String text) {
@@ -169,7 +187,7 @@ public class Utils {
 	}
 
 	// Page load function which will wait for 300 second
-	public static void waitForLoad(WebDriver driver) {
+	public static void waitForLoad(WebDriver driver) throws InterruptedException {
 
 		ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
@@ -177,7 +195,11 @@ public class Utils {
 			}
 		};
 		WebDriverWait wait = new WebDriverWait(driver, 300);
+		//WebElement element = driver.findElement(By.xpath("" + Xid + ""));
+		
+		//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("" + Xid + "")));
 		wait.until(pageLoadCondition);
+		Thread.sleep(2000);
 
 	}
 	
