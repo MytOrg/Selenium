@@ -1,34 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="2" ignored="0" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42032" started-at="2019-02-28T10:05:52Z" finished-at="2019-02-28T10:06:34Z">
+  <suite name="Default suite" duration-ms="119851" started-at="2019-03-04T06:03:23Z" finished-at="2019-03-04T06:05:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42032" started-at="2019-02-28T10:05:52Z" finished-at="2019-02-28T10:06:34Z">
+    <test name="Default test" duration-ms="119851" started-at="2019-03-04T06:03:23Z" finished-at="2019-03-04T06:05:23Z">
       <class name="webShop.Category">
-        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:webShop.Category@7113b13f]" name="setBaseURL" is-config="true" duration-ms="25899" started-at="2019-02-28T10:05:52Z" finished-at="2019-02-28T10:06:18Z">
+        <test-method status="PASS" signature="setBaseURL()[pri:0, instance:webShop.Category@371a67ec]" name="setBaseURL" is-config="true" duration-ms="7912" started-at="2019-03-04T06:03:23Z" finished-at="2019-03-04T06:03:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBaseURL -->
-        <test-method status="PASS" signature="setupreport()[pri:0, instance:webShop.Category@7113b13f]" name="setupreport" is-config="true" duration-ms="1" started-at="2019-02-28T10:06:18Z" finished-at="2019-02-28T10:06:18Z">
+        <test-method status="PASS" signature="setupreport()[pri:0, instance:webShop.Category@371a67ec]" name="setupreport" is-config="true" duration-ms="2" started-at="2019-03-04T06:03:31Z" finished-at="2019-03-04T06:03:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupreport -->
-        <test-method status="FAIL" signature="opewebshop()[pri:0, instance:webShop.Category@7113b13f]" name="opewebshop" duration-ms="11804" started-at="2019-02-28T10:06:18Z" finished-at="2019-02-28T10:06:30Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="PASS" signature="opewebshop()[pri:0, instance:webShop.Category@371a67ec]" name="opewebshop" duration-ms="78666" started-at="2019-03-04T06:03:31Z" finished-at="2019-03-04T06:04:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- opewebshop -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:webShop.Category@371a67ec]" name="getResult" is-config="true" duration-ms="1143" started-at="2019-03-04T06:04:49Z" finished-at="2019-03-04T06:04:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=opewebshop status=SUCCESS method=Category.opewebshop()[pri:0, instance:webShop.Category@371a67ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="setupreport()[pri:0, instance:webShop.Category@371a67ec]" name="setupreport" is-config="true" duration-ms="2" started-at="2019-03-04T06:04:51Z" finished-at="2019-03-04T06:04:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupreport -->
+        <test-method status="FAIL" signature="Filteringfunction()[pri:1, instance:webShop.Category@371a67ec]" name="Filteringfunction" duration-ms="25126" started-at="2019-03-04T06:04:51Z" finished-at="2019-03-04T06:05:16Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [Callme - NOT FOR COMMERCIAL USE] but found [Google]]]>
+              <![CDATA[Unable to locate element: //span[@class='cm-c-checkbox__label'][contains(text(),'Apple')] 
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:05:20.749Z'
+System info: host: 'INPUHJLP07059', ip: '10.85.238.46', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 64.0.2, capabilities: {desiredCapabilities: {acceptInsecureCerts: true, browserName: firefox}}, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13668, moz:profile: C:\Users\as00360417\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 581965a9-20c3-46a3-8ecb-fdb4f8da7a2c
+*** Element info: {Using=xpath, value=//span[@class='cm-c-checkbox__label'][contains(text(),'Apple')] }]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Callme - NOT FOR COMMERCIAL USE] but found [Google]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:453)
-at org.testng.Assert.assertEquals(Assert.java:463)
-at webShop.Category.opewebshop(Category.java:98)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //span[@class='cm-c-checkbox__label'][contains(text(),'Apple')] 
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:05:20.749Z'
+System info: host: 'INPUHJLP07059', ip: '10.85.238.46', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 64.0.2, capabilities: {desiredCapabilities: {acceptInsecureCerts: true, browserName: firefox}}, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13668, moz:profile: C:\Users\as00360417\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 581965a9-20c3-46a3-8ecb-fdb4f8da7a2c
+*** Element info: {Using=xpath, value=//span[@class='cm-c-checkbox__label'][contains(text(),'Apple')] }
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at Utility.Utils.functionMain(Utils.java:113)
+at webShop.Category.Filteringfunction(Category.java:123)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -56,57 +98,74 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- opewebshop -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:webShop.Category@7113b13f]" name="getResult" is-config="true" duration-ms="2231" started-at="2019-02-28T10:06:30Z" finished-at="2019-02-28T10:06:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=opewebshop status=FAILURE method=Category.opewebshop()[pri:0, instance:webShop.Category@7113b13f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="setupreport()[pri:0, instance:webShop.Category@7113b13f]" name="setupreport" is-config="true" duration-ms="0" started-at="2019-02-28T10:06:32Z" finished-at="2019-02-28T10:06:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupreport -->
-        <test-method status="PASS" signature="Filteringfunction()[pri:1, instance:webShop.Category@7113b13f]" name="Filteringfunction" duration-ms="1423" started-at="2019-02-28T10:06:32Z" finished-at="2019-02-28T10:06:33Z">
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Filteringfunction -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:webShop.Category@7113b13f]" name="getResult" is-config="true" duration-ms="277" started-at="2019-02-28T10:06:33Z" finished-at="2019-02-28T10:06:34Z">
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:webShop.Category@371a67ec]" name="getResult" is-config="true" duration-ms="245" started-at="2019-03-04T06:05:16Z" finished-at="2019-03-04T06:05:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Filteringfunction status=SUCCESS method=Category.Filteringfunction()[pri:1, instance:webShop.Category@7113b13f] output={null}]]]>
+                <![CDATA[[TestResult name=Filteringfunction status=FAILURE method=Category.Filteringfunction()[pri:1, instance:webShop.Category@371a67ec] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="FAIL" signature="tearDown()[pri:0, instance:webShop.Category@7113b13f]" name="tearDown" is-config="true" duration-ms="1" started-at="2019-02-28T10:06:34Z" finished-at="2019-02-28T10:06:34Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="PASS" signature="setupreport()[pri:0, instance:webShop.Category@371a67ec]" name="setupreport" is-config="true" duration-ms="1" started-at="2019-03-04T06:05:16Z" finished-at="2019-03-04T06:05:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupreport -->
+        <test-method status="FAIL" signature="TestFail()[pri:1, instance:webShop.Category@371a67ec]" name="TestFail" duration-ms="64" started-at="2019-03-04T06:05:16Z" finished-at="2019-03-04T06:05:16Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: //div[@class='FPdoLc VlcLAe']//input[@value='Google Search']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:05:20.749Z'
+System info: host: 'INPUHJLP07059', ip: '10.85.238.46', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 64.0.2, capabilities: {desiredCapabilities: {acceptInsecureCerts: true, browserName: firefox}}, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13668, moz:profile: C:\Users\as00360417\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 581965a9-20c3-46a3-8ecb-fdb4f8da7a2c
+*** Element info: {Using=xpath, value=//div[@class='FPdoLc VlcLAe']//input[@value='Google Search']}]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at com.aventstack.extentreports.ExtentReports.removeTest(ExtentReports.java:258)
-at webShop.Category.tearDown(Category.java:188)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@class='FPdoLc VlcLAe']//input[@value='Google Search']
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:05:20.749Z'
+System info: host: 'INPUHJLP07059', ip: '10.85.238.46', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 64.0.2, capabilities: {desiredCapabilities: {acceptInsecureCerts: true, browserName: firefox}}, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 13668, moz:profile: C:\Users\as00360417\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 581965a9-20c3-46a3-8ecb-fdb4f8da7a2c
+*** Element info: {Using=xpath, value=//div[@class='FPdoLc VlcLAe']//input[@value='Google Search']}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+at Utility.Utils.functionMain(Utils.java:113)
+at webShop.Category.TestFail(Category.java:153)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 at java.lang.reflect.Method.invoke(Unknown Source)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-at org.testng.TestRunner.afterRun(TestRunner.java:725)
-at org.testng.TestRunner.run(TestRunner.java:509)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
 at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
 at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
@@ -122,7 +181,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestFail -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:webShop.Category@371a67ec]" name="getResult" is-config="true" duration-ms="159" started-at="2019-03-04T06:05:16Z" finished-at="2019-03-04T06:05:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TestFail status=FAILURE method=Category.TestFail()[pri:1, instance:webShop.Category@371a67ec] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:webShop.Category@371a67ec]" name="tearDown" is-config="true" duration-ms="6438" started-at="2019-03-04T06:05:16Z" finished-at="2019-03-04T06:05:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
